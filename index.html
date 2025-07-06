@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CyberGuard - Sua proteção começa aqui!</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="index.css" />
+
+
+    <!-- Scripts -->
+   <script type="importmap">
+        {
+        "imports": {
+            "@google/genai": "https://esm.sh/@google/genai@^1.8.0"
+        }
+        }
+        </script>
+
+    <script type="module" src="index.ts"></script>
+</head>
+
+<body>
+    <div id="app-root">
+        <!-- CABEÇALHO -->
+        <header>
+            <div class="container">
+                <a href="#" class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5.27273 10.4L12 4L18.7273 10.4V19H5.27273V10.4Z" stroke="#2563EB"
+                            stroke-width="1.5" />
+                        <path d="M12 20V16" stroke="#2563EB" stroke-width="1.5" />
+                        <path d="M2 12L12 2L22 12" stroke="#2563EB" stroke-width="1.5" />
+                    </svg>
+                    <span>CYBERGUARD</span>
+                </a>
+                <nav>
+                    <a href="#inicio">Início</a>
+                    <a href="#feed">Feed</a>
+                    <a href="#comunidade">Comunidade</a>
+                    <a href="#curso">Curso</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section id="inicio" class="hero">
+                <div class="container hero-container">
+                    <div class="hero-text">
+                        <h1>Cyber <span class="highlight">Guard</span></h1>
+                        <p class="subtitle">Sua proteção começa aqui!</p>
+                        <p class="description">Analisamos mensagens, links e e-mails para proteger você de golpes
+                            digitais.</p>
+                        <div class="hero-buttons">
+                            <a href="#detector" class="btn btn-primary">Analisar agora</a>
+                            <a href="#" class="btn btn-secondary">Continuar como visitante</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="img/logo.png" alt="Ilustração CyberGuard" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- DETECTOR -->
+            <section id="detector" class="scam-detector">
+                <div class="container">
+                    <h2>🕵️ Detector de Golpes</h2>
+                    <p>Cole uma mensagem, e-mail ou link suspeito abaixo:</p>
+                    <form id="scam-form">
+                        <textarea id="scam-input" rows="6" placeholder="Cole o conteúdo suspeito aqui..."></textarea>
+                        <button type="submit" class="btn btn-primary">Analisar Conteúdo</button>
+                    </form>
+                    <div id="detector-result-container"></div>
+                </div>
+            </section>
+
+            <!-- FEED -->
+            <section id="feed" class="feed-section">
+                <div class="container">
+                    <h2>📰 Últimas Notícias sobre Ataques Cibernéticos</h2>
+                    <ul>
+                        <li>
+                            <a href="https://seucreditodigital.com.br/ataques-ciberneticos-brasil-2025/"
+                                target="_blank">
+                                Brasil registra 5 mil ataques cibernéticos em 2025
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://diariodocomercio.com.br/legislacao/brasil-registra-mais-700-milhoes-ataques-ciberneticos/"
+                                target="_blank">
+                                Mais de 700 milhões de ataques entre 2023 e 2024
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.terra.com.br/noticias/brasil/policia/justica-bloqueia-r-270-milhoes..."
+                                target="_blank">
+                                Justiça bloqueia R$ 270 milhões após ataque hacker
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cnnbrasil.com.br/tecnologia/grupo-hacker-vaza-dados-de-empresa-brasileira-de-energia/"
+                                target="_blank">
+                                Hacker vaza dados de empresa de energia e expõe falhas de segurança
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://g1.globo.com/tecnologia/noticia/2025/05/17/novo-golpe-do-whatsapp-engana-milhares-no-brasil.ghtml"
+                                target="_blank">
+                                Novo golpe no WhatsApp engana milhares com promessas falsas de emprego
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://canaltech.com.br/seguranca/ciberataques-a-escolas-e-hospitais-crescem-45-em-um-ano-270550/"
+                                target="_blank">
+                                Ciberataques a escolas e hospitais crescem 45% em um ano
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tecmundo.com.br/seguranca/277555-hacker-arrependido-alerta-sobre-fraudes-em-pix.htm"
+                                target="_blank">
+                                Ex-hacker alerta sobre aumento de fraudes envolvendo o Pix
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://exame.com/tecnologia/cybercrime-cresce-na-america-latina-empresas-em-alerta/"
+                                target="_blank">
+                                Cibercrime cresce na América Latina e empresas brasileiras entram em alerta
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- COMUNIDADE -->
+            <section id="comunidade" class="community-section">
+                <div class="container">
+                    <h2>👥 Comunidade CyberGuard</h2>
+                    <p>Relatos e trocas de experiências entre usuários que enfrentaram ataques:</p>
+
+                    <!-- Lista única com ID para relatos fixos e perguntas novas -->
+                    <ul id="community-list">
+                        <li>
+                            <strong>Caue (SP):</strong> "Fui vítima de phishing... quase perdi minha conta do banco.
+                            Depois disso, ativei a autenticação em dois fatores."
+                            <ul>
+                                <li><em>@CyberHelp:</em> Boa, Joana! Ativar o 2FA é um ótimo passo. Também vale conferir
+                                    se seus dados vazaram em sites como <a href="https://haveibeenpwned.com"
+                                        target="_blank">Have I Been Pwned</a>.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Natalia (SP):</strong> "Perdi o acesso ao meu e-mail porque usava a mesma senha em
+                            tudo.
+                            Agora uso senhas únicas com um gerenciador."
+                            <ul>
+                                <li><em>@Segurança360:</em> Excelente, Carlos! Senhas fortes e diferentes são
+                                    fundamentais.
+                                    Habilitar notificações de login suspeito também ajuda muito!
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Marcos (MG):</strong> "Cliquei num link estranho e meu PC ficou lento.
+                            Instalei antivírus e comecei a estudar sobre segurança digital."
+                            <ul>
+                                <li><em>@AnaTech:</em> Ótimo caminho, Marcos! Aprender sobre cibersegurança é essencial.
+                                    Dica: tem cursos gratuitos no CERT.br e Fundação Bradesco!
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Luciana (PR):</strong> "Recebi uma ligação falsa do 'suporte técnico' da operadora e
+                            quase entreguei meus dados bancários."
+                            <ul>
+                                <li><em>@DefesaDigital:</em> Atenção total, Luciana! Esse golpe é comum. Nunca forneça
+                                    dados por telefone.
+                                    Prefira sempre canais oficiais e desconfie de pressa ou ameaças.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <hr>
+
+                    <!-- Formulário para nova pergunta -->
+                    <h3>❓ Envie sua dúvida</h3>
+                    <form id="community-form">
+                        <div class="form-group">
+                            <label for="user-name">Seu nome:</label>
+                            <input type="text" id="user-name" placeholder="Digite seu nome" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="user-question">Sua pergunta:</label>
+                            <textarea id="user-question" rows="3" placeholder="Digite sua pergunta..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Postar Pergunta</button>
+                    </form>
+
+                    <!-- Perguntas enviadas pelo usuário -->
+                    <ul id="community-list">
+                        <!-- As novas perguntas aparecerão aqui -->
+                    </ul>
+                </div>
+            </section>
+
+
+            <!-- CURSO -->
+            <section id="curso" class="course-section">
+                <div class="container">
+                    <h2>🎓 Cursos de Cibersegurança e Proteção de Dados</h2>
+                    <p>Explore os melhores cursos gratuitos — em português e inglês — para fortalecer seu conhecimento
+                        em segurança digital e privacidade:</p>
+
+                    <ul class="course-list">
+                        <li>
+                            <a href="https://www.sp.senai.br/cursos-gratuitos-lgpd-segcibernetica-eticaia"
+                                target="_blank">
+                                SENAI‑SP: LGPD, Segurança Cibernética e Ética na IA
+                            </a>
+                            <span class="tag">4h • Básico • Auto‑instrucional</span>
+                        </li>
+                        <li>
+                            <a href="https://www.edunecursos.com.br/curso/lei-geral-de-protecao-de-dados-lgpd"
+                                target="_blank">
+                                Edune: Operador de LGPD (certificado opcional)
+                            </a>
+                            <span class="tag">10h • Básico • Certificado opcional</span>
+                        </li>
+                        <li>
+                            <a href="https://www.unovacursos.com.br/curso/lei-geral-de-protecao-de-dados-lgpd"
+                                target="_blank">
+                                Unova: LGPD gratuito (10h)
+                            </a>
+                            <span class="tag">10h • Básico • Prático</span>
+                        </li>
+                        <li>
+                            <a href="https://www.onlinecursosgratuitos.com.br/curso/direito/lei-geral-de-protecao-de-dados-lgpd"
+                                target="_blank">
+                                OnlineCursosGratuitos: LGPD (14 módulos)
+                            </a>
+                            <span class="tag">Variável • Básico • Em português</span>
+                        </li>
+                        <li>
+                            <a href="https://www.cursa.com.br/home/course/curso-de-lgpd-completo-gr%C3%A3tis/171"
+                                target="_blank">
+                                Cursa: Curso completo de LGPD & GDPR
+                            </a>
+                            <span class="tag">6h+ • Preparatório • Privacidade global</span>
+                        </li>
+                        <li>
+                            <a href="https://www.enap.gov.br/pt/acontece/noticias/ead-curso-de-introducao-a-lei-brasileira-de-protecao-de-dados-pessoais-esta-com-inscricoes-abertas"
+                                target="_blank">
+                                ENAP+ITS: Introdução à LGPD (10h)
+                            </a>
+                            <span class="tag">10h • Público • Certificado institucional</span>
+                        </li>
+                        <li>
+                            <a href="https://elevocursos.com.br/cursos/de/seguranca-e-protecao/compliance-digital/gratis"
+                                target="_blank">
+                                Elevo: Compliance Digital + LGPD
+                            </a>
+                            <span class="tag">Governança • Ética • Privacidade corporativa</span>
+                        </li>
+                        <li>
+                            <a href="https://www.coursera.org/learn/cybersecurity-for-data-and-system-protection"
+                                target="_blank">
+                                Coursera: Digital Shield – proteção de dados e sistemas
+                            </a>
+                            <span class="tag">Inglês • 4h • Fundamentos</span>
+                        </li>
+                        <li>
+                            <a href="https://alison.com/course/data-protection-officer-training" target="_blank">
+                                Alison: Formando Data Protection Officer (DPO)
+                            </a>
+                            <span class="tag">Inglês • GDPR • Certificado</span>
+                        </li>
+                        <li>
+                            <a href="https://www.mygreatlearning.com/cybersecurity/free-courses" target="_blank">
+                                Great Learning Academy: diversos temas (Forense, Rede, Criptografia)
+                            </a>
+                            <span class="tag">Inglês • Múltiplos módulos • Certificado</span>
+                        </li>
+                        <li>
+                            <a href="https://fullyscholarships.com/adbi-cybersecurity-course-with-free-certificate/"
+                                target="_blank">
+                                ADBI: Curso express de Cibersegurança (nível introdutório)
+                            </a>
+                            <span class="tag">1.5h • Certificado digital</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--QUIZ-->
+            <section id="quiz" class="quiz-section">
+                <div class="container">
+                    <h2>🧠 Teste seus Conhecimentos em Segurança Digital</h2>
+                    <p>Responda as perguntas abaixo para avaliar seu nível de proteção online:</p>
+
+                    <div id="quiz-container">
+                        <div id="question-container">
+                            <div id="question"></div>
+                            <div id="answers" class="answers"></div>
+                        </div>
+
+                        <button id="next-btn" class="btn btn-primary" disabled>Próxima</button>
+                    </div>
+
+                    <div id="result-container" style="display:none;">
+                        <h3>Resultado:</h3>
+                        <p id="result-text"></p>
+                        <button id="restart-btn" class="btn btn-secondary">Refazer Quiz</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTATO -->
+            <section id="contato" class="contact-section">
+                <div class="container">
+                    <h2>📨 Reporte um Ataque</h2>
+                    <p>Preencha o formulário e nossa equipe entrará em contato:</p>
+                    <form id="report-form" class="report-form">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição do ataque:</label>
+                            <textarea id="descricao" name="descricao" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar para Suporte</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2025 CyberGuard. Todos os direitos reservados.</p>
+                <p>Cyber Guard 💻</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JS do Formulário -->
+    <script>
+        document.getElementById('report-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('✅ Obrigado pelo seu relato. Em breve nossa equipe entrará em contato!');
+            this.reset();
+        });
+    </script>
+
+    <script src="comunity.js"></script>
+
+</body>
+
+</html>
